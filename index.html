@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="nl" class="scroll-pt-20">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BeeldFix | Beelden die vertrouwen uitstralen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            animation: {
+              'bounce-subtle': 'bounce-subtle 3s infinite ease-in-out',
+            },
+            keyframes: {
+              'bounce-subtle': {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        scroll-behavior: smooth;
+      }
+      /* Custom utility for shadcn-like animations if needed */
+      .animate-in {
+        animation-duration: 500ms;
+        animation-fill-mode: forwards;
+      }
+      .fade-in {
+        animation-name: fadeIn;
+      }
+      .slide-in-from-left-8 {
+        animation-name: slideInFromLeft;
+      }
+      .slide-in-from-right-8 {
+        animation-name: slideInFromRight;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes slideInFromLeft {
+        from { transform: translateX(-2rem); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+      }
+      @keyframes slideInFromRight {
+        from { transform: translateX(2rem); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+  }
+}
+</script>
+</head>
+  <body class="bg-white text-gray-900">
+    <div id="root"></div>
+  </body>
+</html>
