@@ -46,8 +46,8 @@ const ImageSlider: React.FC = () => {
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Reliable high-quality snack/food image (Doner/Fries/Kapsalon style)
-  const imageUrl = "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=1200";
+  const beforeImageUrl = "/before.jpg";
+  const afterImageUrl = "/after.png";
 
   const handleMove = useCallback((clientX: number) => {
     if (!containerRef.current) return;
@@ -91,7 +91,7 @@ const ImageSlider: React.FC = () => {
       {/* After Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url('${imageUrl}')` }}
+        style={{ backgroundImage: `url('${afterImageUrl}')` }}
       >
         <div className="absolute top-4 right-4 md:top-6 md:right-6 bg-orange-500 text-white px-4 md:px-5 py-1.5 md:py-2 rounded-full font-black text-[9px] md:text-[10px] uppercase tracking-[0.2em] shadow-xl z-30">
           Na BeeldFix
@@ -102,9 +102,9 @@ const ImageSlider: React.FC = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{ 
-          backgroundImage: `url('${imageUrl}')`,
+          backgroundImage: `url('${beforeImageUrl}')`,
           clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`,
-          filter: 'blur(10px) contrast(80%) brightness(75%) saturate(70%)'
+          filter: 'none'
         }}
       >
         <div className="absolute top-4 left-4 md:top-6 md:left-6 bg-gray-900/90 text-white px-4 md:px-5 py-1.5 md:py-2 rounded-full font-black text-[9px] md:text-[10px] uppercase tracking-[0.2em] shadow-xl z-30">
@@ -156,12 +156,14 @@ const Navbar: React.FC = () => {
           className="flex items-center gap-2 group cursor-pointer" 
           onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
         >
-          <div className="w-9 h-9 md:w-11 md:h-11 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-lg md:rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-6 transition-transform">
-            <ImageIcon className="text-white w-5 h-5 md:w-6 md:h-6" />
+          <div className="relative h-8 w-16 md:h-10 md:w-20 overflow-visible">
+            <img
+              src="/Logo_BeeldFix.png"
+              alt="BeeldFix logo"
+              className="absolute left-0 top-1/2 h-10 md:h-[3.125rem] w-auto -translate-y-1/2 origin-left scale-[4]"
+              loading="eager"
+            />
           </div>
-          <span className="text-xl md:text-2xl font-black tracking-tighter text-gray-900">
-            Beeld<span className="text-orange-500">Fix</span>
-          </span>
         </div>
 
         {/* Desktop Nav */}
@@ -405,12 +407,14 @@ export default function App() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-16 md:gap-24">
             <div className="space-y-8 md:space-y-10">
               <div className="flex items-center gap-4 md:gap-5">
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-blue-600 rounded-xl md:rounded-[1.25rem] flex items-center justify-center shadow-xl">
-                  <ImageIcon className="text-white w-6 h-6 md:w-9 md:h-9" />
+                <div className="relative h-10 w-20 md:h-14 md:w-28 overflow-visible">
+                  <img
+                    src="/Logo_BeeldFix.png"
+                    alt="BeeldFix logo"
+                    className="absolute left-0 top-1/2 h-[3.125rem] md:h-[4.375rem] w-auto -translate-y-1/2 origin-left scale-[4]"
+                    loading="lazy"
+                  />
                 </div>
-                <span className="text-3xl md:text-5xl font-black tracking-tighter text-gray-900">
-                  Beeld<span className="text-orange-500">Fix</span>
-                </span>
               </div>
               <p className="text-lg md:text-2xl text-gray-500 font-bold max-w-md leading-relaxed">
                 BeeldFix.nl – Beelden die de trotse Nederlandse ondernemer ondersteunen bij groei.
