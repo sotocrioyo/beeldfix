@@ -1,31 +1,33 @@
 @import "tailwindcss";
 
-html {
-  scroll-behavior: smooth;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Inter", sans-serif;
+  }
 }
 
-body {
-  font-family: "Inter", sans-serif;
-}
-
-.animate-in {
+@utility animate-in {
   animation-duration: 500ms;
   animation-fill-mode: forwards;
 }
 
-.fade-in {
+@utility fade-in {
   animation-name: fadeIn;
 }
 
-.slide-in-from-left-8 {
+@utility slide-in-from-left-8 {
   animation-name: slideInFromLeft;
 }
 
-.slide-in-from-right-8 {
+@utility slide-in-from-right-8 {
   animation-name: slideInFromRight;
 }
 
-.animate-bounce-subtle {
+@utility animate-bounce-subtle {
   animation: bounce-subtle 3s infinite ease-in-out;
 }
 

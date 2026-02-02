@@ -171,6 +171,7 @@ const Navbar: React.FC = () => {
           <a href="#wat-we-doen" onClick={(e) => handleNavClick(e, 'wat-we-doen')} className="hover:text-blue-600 transition-colors text-sm uppercase tracking-widest">Diensten</a>
           <a href="#voor-wie" onClick={(e) => handleNavClick(e, 'voor-wie')} className="hover:text-blue-600 transition-colors text-sm uppercase tracking-widest">Voor wie</a>
           <a href="#waarom" onClick={(e) => handleNavClick(e, 'waarom')} className="hover:text-blue-600 transition-colors text-sm uppercase tracking-widest">Waarom</a>
+          <a href="#pricing" onClick={(e) => handleNavClick(e, 'pricing')} className="hover:text-blue-600 transition-colors text-sm uppercase tracking-widest">Prijs</a>
           <a 
             href="mailto:hello@beeldfix.nl" 
             className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3.5 rounded-xl transition-all shadow-xl hover:shadow-blue-200 active:scale-95 text-sm uppercase tracking-widest font-black"
@@ -194,6 +195,7 @@ const Navbar: React.FC = () => {
         <a href="#wat-we-doen" onClick={(e) => handleNavClick(e, 'wat-we-doen')} className="text-2xl py-4 border-b border-gray-100">Diensten</a>
         <a href="#voor-wie" onClick={(e) => handleNavClick(e, 'voor-wie')} className="text-2xl py-4 border-b border-gray-100">Voor wie</a>
         <a href="#waarom" onClick={(e) => handleNavClick(e, 'waarom')} className="text-2xl py-4 border-b border-gray-100">Waarom</a>
+        <a href="#pricing" onClick={(e) => handleNavClick(e, 'pricing')} className="text-2xl py-4 border-b border-gray-100">Prijs</a>
         <a href="mailto:hello@beeldfix.nl" className="bg-blue-600 text-white text-center py-5 rounded-2xl text-xl shadow-2xl mt-4">Neem contact op</a>
       </div>
     </nav>
@@ -206,19 +208,19 @@ export default function App() {
       <Navbar />
 
       {/* HERO SECTION */}
-      <header className="relative pt-24 pb-16 md:pt-56 md:pb-48">
+      <header className="relative pt-24 pb-16 md:pt-32 md:pb-32 lg:pt-40 lg:pb-40">
         <div className="absolute top-0 right-0 -z-10 w-[60%] h-[90%] bg-blue-50/40 rounded-bl-[8rem] md:rounded-bl-[12rem]"></div>
         <div className="absolute top-1/3 -left-20 -z-10 w-60 h-60 md:w-80 md:h-80 bg-orange-50 rounded-full blur-[80px] md:blur-[100px] opacity-70"></div>
 
-        <div className="max-w-7xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-16 md:gap-24 items-center">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-16 md:gap-24 items-start">
           <div className="space-y-8 md:space-y-12 animate-in fade-in slide-in-from-left-8 duration-700">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-100 text-cyan-800 font-black text-[10px] md:text-xs uppercase tracking-[0.2em] border border-cyan-200">
               <Camera size={14} className="text-cyan-700" /> Professionele Beeldkwaliteit
             </div>
-            <h1 className="text-5xl md:text-9xl font-black text-gray-900 leading-[0.95] tracking-tighter">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-gray-900 leading-[0.95] tracking-tighter">
               Slechte foto's kosten je <span className="text-blue-600 italic">klanten.</span>
             </h1>
-            <p className="text-lg md:text-3xl text-gray-600 leading-snug max-w-xl font-medium tracking-tight">
+            <p className="text-lg md:text-2xl text-gray-600 leading-snug max-w-xl font-medium tracking-tight">
               Wij maken je bestaande beelden <span className="relative inline-block text-gray-900 font-black">vlijmscherp<span className="absolute left-0 bottom-1 md:bottom-2 w-full h-1.5 md:h-3 bg-orange-500/80 -z-10"></span></span> en professioneel, zonder nieuwe fotoshoot.
             </p>
             <div className="flex flex-col sm:flex-row gap-5 pt-4 md:pt-6">
@@ -243,7 +245,7 @@ export default function App() {
             </div>
           </div>
 
-          <div className="relative animate-in fade-in slide-in-from-right-8 duration-1000 mt-8 md:mt-0">
+          <div className="relative animate-in fade-in slide-in-from-right-8 duration-1000 mt-8 md:mt-0 lg:-mt-6">
             <div className="absolute -inset-10 md:-inset-16 bg-gradient-to-tr from-cyan-500/20 to-orange-500/20 blur-[80px] md:blur-[120px] rounded-[4rem] md:rounded-[6rem]"></div>
             <ImageSlider />
             <div className="absolute -bottom-6 -left-4 md:-bottom-12 md:-left-16 bg-white p-5 md:p-8 rounded-[2rem] md:rounded-[3rem] shadow-3xl flex items-center gap-4 md:gap-6 border border-gray-100 animate-bounce-subtle z-50">
@@ -372,6 +374,76 @@ export default function App() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PRICING */}
+      <section id="pricing" className="py-24 md:py-40 bg-white">
+        <div className="max-w-6xl mx-auto px-4 md:px-6">
+          <div className="text-center mb-14 md:mb-20 space-y-6 md:space-y-8">
+            <h2 className="text-4xl md:text-7xl font-black text-gray-900 tracking-tighter leading-none">
+              Eén pakket. Eén prijs. Klaar.
+            </h2>
+            <p className="text-xl md:text-3xl text-gray-500 font-medium">
+              Geen abonnement. Geen gedoe. Alleen betere beelden.
+            </p>
+          </div>
+
+          <div className="relative bg-gray-900 text-white rounded-[2.5rem] md:rounded-[4rem] p-10 md:p-16 shadow-4xl overflow-hidden">
+            <div className="absolute -top-24 -right-24 w-72 h-72 md:w-[28rem] md:h-[28rem] bg-blue-600/20 rounded-full blur-[90px]"></div>
+            <div className="absolute -bottom-24 -left-24 w-72 h-72 md:w-[28rem] md:h-[28rem] bg-orange-500/20 rounded-full blur-[90px]"></div>
+
+            <div className="relative z-10 text-center space-y-8 md:space-y-10">
+              <div>
+                <div className="text-5xl md:text-7xl font-black tracking-tight">€59</div>
+                <div className="text-lg md:text-2xl text-gray-300 font-bold mt-2">tot 15 foto’s</div>
+                <div className="text-xs md:text-sm text-gray-400 font-bold mt-3 uppercase tracking-widest">
+                  (eenmalig, excl. btw)
+                </div>
+              </div>
+
+              <a
+                href="mailto:hello@beeldfix.nl"
+                className="inline-flex items-center justify-center bg-white text-gray-900 hover:bg-blue-600 hover:text-white text-lg md:text-2xl font-black px-10 md:px-16 py-4 md:py-6 rounded-2xl transition-all shadow-5xl active:scale-95"
+              >
+                Stuur je beelden in
+              </a>
+
+              <div className="text-sm md:text-base text-gray-300 font-bold flex flex-wrap justify-center gap-4 md:gap-8">
+                <span>✔ Snel geleverd</span>
+                <span>✔ Professionele uitstraling</span>
+                <span>✔ Werkt met bestaande foto’s</span>
+              </div>
+
+              <div className="text-sm md:text-base text-gray-300 font-medium">
+                Een professionele fotoshoot kost al snel €500+.<br />
+                BeeldFix is alleen €59.
+              </div>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-10 md:gap-16 mt-14 md:mt-20">
+            <div className="p-8 md:p-12 bg-gray-50 rounded-[2rem] md:rounded-[3rem] border border-gray-100">
+              <h3 className="text-2xl md:text-3xl font-black text-gray-900 mb-6">Wat je krijgt</h3>
+              <ul className="space-y-3 text-lg text-gray-600 font-medium">
+                <li>Verbetering van tot 15 foto’s</li>
+                <li>Scherper en helderder beeld</li>
+                <li>Betere kleuren, contrast & belichting</li>
+                <li>Geschikt voor website, Google & social media</li>
+                <li>Geen nieuwe fotoshoot nodig</li>
+                <li>Levering binnen 48 uur</li>
+              </ul>
+            </div>
+
+            <div className="p-8 md:p-12 bg-gray-50 rounded-[2rem] md:rounded-[3rem] border border-gray-100">
+              <h3 className="text-2xl md:text-3xl font-black text-gray-900 mb-6">Voor wie</h3>
+              <ul className="space-y-3 text-lg text-gray-600 font-medium">
+                <li>Lokale ondernemers</li>
+                <li>ZZP’ers & MKB</li>
+                <li>Bedrijven met bestaande (maar slechte) foto’s</li>
+              </ul>
             </div>
           </div>
         </div>
